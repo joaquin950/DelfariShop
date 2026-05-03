@@ -69,7 +69,16 @@ function updateWhatsAppLink(total) {
     let msg = 'Hola Delfari Shop! Quiero pedir:\n\n';
     cart.forEach(i => msg += `• ${i.name} (x${i.qty})\n`);
     msg += `\n*Total: $${total.toLocaleString()}*`;
-    btn.href = `https://wa.me/5493825406767?text=${encodeURIComponent(msg)}`;
+    
+    // El link de WhatsApp
+    const waUrl = `https://wa.me/5493825406767?text=${encodeURIComponent(msg)}`;
+    
+    // Al hacer clic, enviamos el mensaje y LUEGO vaciamos el carrito
+    btn.onclick = () => {
+        window.open(waUrl, '_blank');
+        clearCart(); // Esta función ya borra el localStorage y actualiza la UI
+        toggleCart(); // Cerramos el panel del carrito para que se vea el cambio
+    };
 }
 
 function toggleCart() {

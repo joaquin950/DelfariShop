@@ -29,8 +29,12 @@ function filterProducts(cat) {
     }, 200);
 }
 
+// script.js
 function toggleMobileMenu() {
-    document.getElementById('mobile-menu').classList.toggle('hidden');
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('active');
+    // Bloqueamos el scroll del fondo cuando el menú está abierto
+    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
 }
 
 function openDetail(id) {
