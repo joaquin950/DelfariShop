@@ -13,19 +13,26 @@ body { font-family: 'DM Sans', sans-serif; background-color: #fffafa; scroll-beh
 .no-scrollbar::-webkit-scrollbar { display: none; }
 
 /* style.css */
+
+/* Estado base del panel (escondido a la izquierda) */
 #mobile-menu-panel {
     transition: transform 0.3s ease-in-out;
     transform: translateX(-100%);
 }
-#mobile-menu.active #mobile-menu-panel {
-    transform: translateX(0);
-}
+
+/* Estado base del contenedor (invisible y no clickeable) */
 #mobile-menu {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
 }
+
+/* ACTIVACIÓN: Cuando agregamos la clase .active mediante JS */
 #mobile-menu.active {
-    opacity: 1;
-    pointer-events: auto;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+#mobile-menu.active #mobile-menu-panel {
+    transform: translateX(0) !important;
 }
