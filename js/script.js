@@ -32,14 +32,10 @@ function filterProducts(cat) {
 
 function toggleMobileMenu() {
     const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('active');
+    const isOpening = menu.classList.toggle('active');
     
-    // Bloqueamos el scroll del fondo para que la experiencia sea mejor en móvil
-    if (menu.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'auto';
-    }
+    // Bloquea el scroll del resto de la página al abrir
+    document.body.style.overflow = isOpening ? 'hidden' : 'auto';
 }
 
 function openDetail(id) {

@@ -15,24 +15,33 @@ body { font-family: 'DM Sans', sans-serif; background-color: #fffafa; scroll-beh
 /* style.css */
 
 /* Estado base del panel (escondido a la izquierda) */
-#mobile-menu-panel {
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(-100%);
+/* --- MENU MOBILE --- */
+
+/* 1. Solo se muestra en pantallas pequeñas (Mobile) */
+@media (min-width: 768px) {
+    #mobile-menu {
+        display: none !important; /* Oculta totalmente en Desktop */
+    }
 }
 
-/* Estado base del contenedor (invisible y no clickeable) */
+/* 2. Estado base: Oculto y fuera de pantalla */
 #mobile-menu {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
 }
 
-/* ACTIVACIÓN: Cuando agregamos la clase .active mediante JS */
+#mobile-menu-panel {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 3. Estado activo: Se muestra y desliza */
 #mobile-menu.active {
-    opacity: 1 !important;
-    pointer-events: auto !important;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 #mobile-menu.active #mobile-menu-panel {
-    transform: translateX(0) !important;
+    transform: translateX(0);
 }
