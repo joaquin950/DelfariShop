@@ -29,8 +29,8 @@
 
 <body class="text-gray-800 antialiased">
 
-  <nav class="sticky top-0 z-40 glass-nav border-b border-rose-100 px-4 py-3">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+  <nav class="sticky top-0 z-50 w-full bg-white border-b border-rose-100 px-4 py-3 shadow-sm">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2 md:gap-4">
       
       <div class="flex items-center justify-between w-full md:w-auto">
         <div class="flex items-center gap-3">
@@ -64,20 +64,19 @@
 
   <header class="bg-rose-50 py-12 px-6">
     <div class="max-w-7xl mx-auto text-center">
-      <h1 class="font-display text-5xl md:text-6xl text-gray-900 mb-4">Esencia <span class="text-rose-500 italic">Femenina.</span></h1>
-      <p class="text-gray-600 max-w-md mx-auto mb-8">Colección exclusiva para el local de tu novia.</p>
+      <h1 class="font-display text-5xl md:text-6xl text-gray-900 mb-4">Dos mundos, <span class="text-rose-500 italic">un solo estilo.</span></h1>
+      <p class="text-gray-600 max-w-md mx-auto mb-8">Explora la colección</p>
       <a href="#catalogo" class="inline-block bg-gray-900 text-white px-8 py-3 rounded-full hover:bg-rose-600 transition shadow-lg">Ver Catálogo</a>
     </div>
   </header>
 
   <main id="catalogo" class="max-w-7xl mx-auto py-16 px-6">
-    <div id="products-container" class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 transition-all duration-300">
-      </div>
+    <div id="products-container" class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 transition-all duration-300"></div>
   </main>
 
-  <div id="product-detail-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+  <div id="product-detail-modal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-4">
     <div onclick="closeDetail()" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
-    <div class="relative bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2rem] flex flex-col md:flex-row">
+    <div class="relative bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2rem] flex flex-col md:flex-row shadow-2xl">
       <div class="md:w-1/2 h-80 md:h-auto"><img id="detail-img" src="" class="w-full h-full object-cover"></div>
       <div class="md:w-1/2 p-8 flex flex-col">
         <h2 id="detail-name" class="font-display text-3xl mb-4"></h2>
@@ -88,8 +87,8 @@
     </div>
   </div>
 
-  <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/40 z-40 hidden"></div>
-  <aside id="cart-panel" class="fixed top-0 right-0 h-full w-full sm:w-[400px] bg-white z-50 shadow-2xl translate-x-full transition-transform duration-500 flex flex-col">
+  <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/40 z-[60] hidden"></div>
+  <aside id="cart-panel" class="fixed top-0 right-0 h-full w-full sm:w-[400px] bg-white z-[70] shadow-2xl translate-x-full transition-transform duration-500 flex flex-col">
     <div class="p-6 border-b flex justify-between items-center">
       <h3 class="font-display text-2xl">Mi Pedido</h3>
       <button onclick="toggleCart()" class="text-gray-400">✕</button>

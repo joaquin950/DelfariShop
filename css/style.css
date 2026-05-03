@@ -1,18 +1,23 @@
-/* Configuración Base */
+/* Configuración General */
 body { 
     font-family: 'DM Sans', sans-serif; 
     background-color: #fffafa; 
     scroll-behavior: smooth; 
+    margin: 0;
+    padding: 0;
 }
 
-/* Navbar con efecto desenfoque (Glassmorphism) */
-.glass-nav { 
-    background: rgba(255, 255, 255, 0.9); 
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px); /* Soporte para Safari */
+/* Navbar Totalmente Opaco y Fijo */
+nav { 
+    background-color: #ffffff !important; /* Blanco sólido */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra ligera para separar del contenido */
 }
 
-/* Efecto en imágenes de productos */
+/* Estilos de Producto */
 .product-card img { 
     transition: transform 0.5s ease; 
 }
@@ -21,7 +26,7 @@ body {
     transform: scale(1.05); 
 }
 
-/* Animación para el filtrado de productos */
+/* Animaciones */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -31,32 +36,29 @@ body {
     animation: fadeIn 0.4s ease forwards; 
 }
 
-/* --- OPTIMIZACIÓN DE CATEGORÍAS --- */
-
-/* Ocultar barra de scroll en el contenedor de categorías */
+/* --- CATEGORÍAS CON SCROLL HORIZONTAL --- */
 .no-scrollbar::-webkit-scrollbar { 
     display: none; 
 }
 
 .no-scrollbar {
-    -ms-overflow-style: none;  /* IE y Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     display: flex;
     overflow-x: auto;
-    scroll-snap-type: x mandatory; /* Mejora el deslizamiento en móvil */
-    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }
 
-/* Estilo para los botones de categorías */
 .no-scrollbar button {
     scroll-snap-align: start;
     flex-shrink: 0;
 }
 
-/* Degradado sutil en los bordes para indicar que hay más categorías (solo en móvil) */
+/* Degradado visual para móvil indicando scroll */
 @media (max-width: 768px) {
     .no-scrollbar {
-        mask-image: linear-gradient(to right, black 85%, transparent 100%);
-        -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+        mask-image: linear-gradient(to right, black 90%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
     }
 }
