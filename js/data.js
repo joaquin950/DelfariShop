@@ -62,7 +62,7 @@ const products = [
         name: 'Conjunto con Stras',
         price: 65000,
         category: 'abrigos',
-        image: CLOUDINARY_BASE +'sueter_m35h5s.jpg',
+        image: CLOUDINARY_BASE +'conjunto_b1h0uk.jpg',
         tag: 'Nuevo',
         desc: 'Consulta precio si queres llevar solo la campera o solo el pantalon'
 
