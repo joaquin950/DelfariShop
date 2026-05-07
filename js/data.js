@@ -43,8 +43,30 @@ const products = [
         tag: 'Nuevo',
         desc: 'Confexion chica-Wideleg'
 
-    }
+    },
 
+    {
+        id: 5,
+        name: 'Sueter Talle Unico',
+        price: 20000,
+        category: 'abrigos',
+        image: CLOUDINARY_BASE +'sueter_m35h5s.jpg',
+        tag: 'Nuevo',
+        desc: `-Ceden a un talle 6
+                -Colores: Blanco, Negro, Gris, Verde, Fucsia, Marron`
+
+    },
+
+    {
+        id: 6,
+        name: 'Conjunto con Stras',
+        price: 65000,
+        category: 'abrigos',
+        image: CLOUDINARY_BASE +'sueter_m35h5s.jpg',
+        tag: 'Nuevo',
+        desc: 'Consulta precio si queres llevar solo la campera o solo el pantalon'
+
+    }
 
 
 
